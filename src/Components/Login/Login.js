@@ -4,6 +4,8 @@ import Logo from '../../olx-logo.png';
 import './Login.css';
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div>
       <div className="loginParentDiv">
