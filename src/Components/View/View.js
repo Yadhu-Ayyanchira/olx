@@ -1,7 +1,20 @@
-import React from 'react';
+import React,{useEffect,useState,useContext} from 'react';
 
 import './View.css';
+import { PostContext } from '../../store/PostContext';
+import { FirebaseContext } from '../../store/Context';
 function View() {
+  const [userDetails,setUserDetails] = useState()
+  const {postDetails} = useContext(PostContext)
+  const {firebase} = useContext(FirebaseContext)
+  useEffect(()=>{
+    const {userId} =postDetails
+    firebase.firestore().collection('users').where('id','==',userId).get().then((res)=>{
+      res.forEach(doc => {
+        setUserDetails(doc.data)
+      });
+    })
+  })
   return (
     <div className="viewParentDiv">
       <div className="imageShowDiv">

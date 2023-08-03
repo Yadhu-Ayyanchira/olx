@@ -6,7 +6,7 @@ const Create = () => {
   return (
     <Fragment>
       <Header />
-      <card>
+     
         <div className="centerDiv">
           <form>
             <label htmlFor="fname">Name</label>
@@ -43,7 +43,7 @@ const Create = () => {
             <button className="uploadBtn">upload and Submit</button>
           </form>
         </div>
-      </card>
+      
     </Fragment>
   );
 };
